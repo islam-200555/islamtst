@@ -33,7 +33,7 @@ async def cbstart(_, query: CallbackQuery):
                 [InlineKeyboardButton("❓ Basic Guide", callback_data="cbhowtouse")],
                 [
                     InlineKeyboardButton("📚 Commands", callback_data="cbcmds"),
-                    InlineKeyboardButton("❤ Donate", url=f"https://t.me/{OWNER_NAME}"),
+                    InlineKeyboardButton("❤ Donate", url=f"https://t.me/Q_X_I_T"),
                 ],
                 [
                     InlineKeyboardButton(
@@ -130,16 +130,13 @@ async def cbadmin(_, query: CallbackQuery):
     await query.edit_message_text(
         f"""🏮 here is the admin commands:
 
-» /pause - pause the stream
-» /resume - resume the stream
-» /skip - switch to next stream
-» /stop - stop the streaming
-» /vmute - mute the userbot on voice chat
-» /vunmute - unmute the userbot on voice chat
-» /volume `1-200` - adjust the volume of music (userbot must be admin)
-» /reload - reload bot and refresh the admin data
-» /userbotjoin - invite the userbot to join group
-» /userbotleave - order userbot to leave from group
+» .شغل - لتشغيل الاغاني💕
+» .فيديو - لتشغيل الفيديوهات💕
+» .لايف - لتشغيل لايف 💕
+» .انضم - لانضمام حساب مساعد 💕
+» .اخرج - خروج حساب مساعد من الجروب 💕
+» .ايقاف - لايقاف تشغيل الاغنيه 💕
+» .reload - اعاده تشغيل خاصه بالادمن
 
 ⚡️ __Powered by {BOT_NAME} AI__""",
         reply_markup=InlineKeyboardMarkup(
