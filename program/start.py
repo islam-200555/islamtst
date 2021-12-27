@@ -54,36 +54,36 @@ async def _human_time_duration(seconds):
 async def start_(client: Client, message: Message):
     await message.reply_text(
         f"""✨ **Welcome {message.from_user.mention()} !**\n
-💭 [{BOT_NAME}](https://t.me/{BOT_USERNAME}) **Allows you to play music and video on groups through the new Telegram's video chats!**
+⏱️ [{BOT_NAME}](https://t.me/{BOT_USERNAME}) ** يتيح لك تشغيل الموسيقى والفيديو في مجموعات من خلال محادثات الفيديو الجديدة في Telegram!!**
 
-💡 **Find out all the Bot's commands and how they work by clicking on the » 📚 Commands button!**
+💡 **لمعرفة جميع اوامر البوت اضغط علي » 📚 زرار الاوامر!**
 
-🔖 **To know how to use this bot, please click on the » ❓ Basic Guide button!**
+🔖 **لمعرفه طريقه استخدام اضغط علي كلمه  » ❓ زرار الدليل الاساسي!**
 """,
         reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "➕ Add me to your Group ➕",
+                        "➕ اضغط لاضافتي الي جروبك➕",
                         url=f"https://t.me/{BOT_USERNAME}?startgroup=true",
                     )
                 ],
-                [InlineKeyboardButton("❓ Basic Guide", callback_data="cbhowtouse")],
+                [InlineKeyboardButton("طريقه التفعيل 💕", callback_data="cbhowtouse")],
                 [
-                    InlineKeyboardButton("📚 Commands", callback_data="cbcmds"),
-                    InlineKeyboardButton("❤️ Donate", url=f"https://t.me/{OWNER_NAME}"),
+                    InlineKeyboardButton("الاوامر يقلبي 💕", callback_data="cbcmds"),
+                    InlineKeyboardButton("المالك 💕", url=f"https://t.me/{OWNER_NAME}"),
                 ],
                 [
                     InlineKeyboardButton(
-                        "👥 Official Group", url=f"https://t.me/{GROUP_SUPPORT}"
+                        "جروب الدعم 💕", url=f"https://t.me/{GROUP_SUPPORT}"
                     ),
                     InlineKeyboardButton(
-                        "📣 Official Channel", url=f"https://t.me/{UPDATES_CHANNEL}"
+                        "قناة السورس💕", url=f"https://t.me/{UPDATES_CHANNEL}"
                     ),
                 ],
                 [
                     InlineKeyboardButton(
-                        "🌐 Source Code", url="https://github.com/levina-lab/video-stream"
+                        "مبرمج السورس(dev ιѕlaм)", url="https://t.me/Q_X_I_T"
                     )
                 ],
             ]
@@ -93,7 +93,7 @@ async def start_(client: Client, message: Message):
 
 
 @Client.on_message(
-    command(["alive", f"alive@{BOT_USERNAME}"]) & filters.group & ~filters.edited
+    command(["حالة البوت", f"alive@{BOT_USERNAME}"]) & filters.group & ~filters.edited
 )
 async def alive(client: Client, message: Message):
     current_time = datetime.utcnow()
@@ -120,7 +120,7 @@ async def alive(client: Client, message: Message):
     )
 
 
-@Client.on_message(command(["بنج", f"ping@{BOT_USERNAME}"]) & ~filters.edited)
+@Client.on_message(command(["بنك", f"ping@{BOT_USERNAME}"]) & ~filters.edited)
 async def ping_pong(client: Client, message: Message):
     start = time()
     m_reply = await message.reply_text("pinging...")
@@ -147,17 +147,17 @@ async def new_chat(c: Client, m: Message):
     for member in m.new_chat_members:
         if member.id == bot_id:
             return await m.reply(
-                "❤️ **Thanks for adding me to the Group !**\n\n"
-                "**Promote me as administrator of the Group, otherwise I will not be able to work properly, and don't forget to type /userbotjoin for invite the assistant.**\n\n"
-                "**Once done, type** /reload",
+                "❤️ **شكرا لاضافتني الي المجموعة**\n\n"
+                "**قم برفعي ادمن فالجروب ثم اكتب .انضم ليتم اضافه حساب المساعد **\n\n"
+                "**ولا تنسي ان تكتب ريلود لاعادة تشغيله ليصبح بشكل جيد** /reload",
                 reply_markup=InlineKeyboardMarkup(
                     [
                         [
-                            InlineKeyboardButton("📣 Channel", url=f"https://t.me/{UPDATES_CHANNEL}"),
-                            InlineKeyboardButton("💭 Support", url=f"https://t.me/{GROUP_SUPPORT}")
+                            InlineKeyboardButton("📣 القناة", url=f"https://t.me/{UPDATES_CHANNEL}"),
+                            InlineKeyboardButton("💕 جروب الدعم", url=f"https://t.me/{GROUP_SUPPORT}")
                         ],
                         [
-                            InlineKeyboardButton("👤 Assistant", url=f"https://t.me/{ass_uname}")
+                            InlineKeyboardButton("👤 حساب المساعد", url=f"https://t.me/{ass_uname}")
                         ]
                     ]
                 )
